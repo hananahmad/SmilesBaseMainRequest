@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SmilesBaseMainResponseAdditionalInfo : Codable {
+public class SmilesBaseMainResponseAdditionalInfo : Codable {
     
     @objc var name : String?
     @objc var value : String?
@@ -18,7 +18,7 @@ class SmilesBaseMainResponseAdditionalInfo : Codable {
     }
     
     
-    required init(from decoder: Decoder) throws {
+    required public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         name = try values.decodeIfPresent(String.self, forKey: .name)
         value = try values.decodeIfPresent(String.self, forKey: .value)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SmilesBaseMainRequestConfigurations : Codable {
+public class SmilesBaseMainRequestConfigurations : Codable {
     
     var encryptionkey: String?
     var initVector: String?
