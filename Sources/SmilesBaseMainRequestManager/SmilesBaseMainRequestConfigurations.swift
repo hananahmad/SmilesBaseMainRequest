@@ -11,7 +11,7 @@ open class SmilesBaseMainRequestConfigurations : Codable {
     
     public var encryptionkey: String?
     public var initVector: String?
-    public var additionalInfo: [SmilesBaseMainResponseAdditionalInfo]?
+    public var additionalInfo: [BaseMainResponseAdditionalInfo]?
     public var appVersion : String?
     public var authToken : String?
     public var channel : String?
@@ -71,7 +71,7 @@ open class SmilesBaseMainRequestConfigurations : Codable {
     required public init(from decoder: Decoder) throws {
         
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        additionalInfo = try values.decode([SmilesBaseMainResponseAdditionalInfo].self, forKey: .additionalInfo)
+        additionalInfo = try values.decode([BaseMainResponseAdditionalInfo].self, forKey: .additionalInfo)
         appVersion = try values.decodeIfPresent(String.self, forKey: .appVersion)
         authToken = try values.decodeIfPresent(String.self, forKey: .authToken)
         channel = try values.decodeIfPresent(String.self, forKey: .channel)
@@ -89,7 +89,7 @@ open class SmilesBaseMainRequestConfigurations : Codable {
         
     }
     
-    init(encryptionKey: String, initVector: String, additionalInfo: [SmilesBaseMainResponseAdditionalInfo], appVersion: String?, authToken: String?, channel: String?, deviceId: String?, handsetModel: String?, imsi: String?, isGpsEnabled: Bool?, isNotificationEnabled: Bool?, langauge: String?, msisdn: String?, osVersion: String?, token: String?, hashId: String?, deviceHashId: String?) {
+    init(encryptionKey: String, initVector: String, additionalInfo: [BaseMainResponseAdditionalInfo], appVersion: String?, authToken: String?, channel: String?, deviceId: String?, handsetModel: String?, imsi: String?, isGpsEnabled: Bool?, isNotificationEnabled: Bool?, langauge: String?, msisdn: String?, osVersion: String?, token: String?, hashId: String?, deviceHashId: String?) {
         
         self.encryptionkey = encryptionKey
         self.initVector = initVector
