@@ -18,4 +18,9 @@ open class SmilesBaseMainRequestManager {
         
     }
     
+    public func getConfigsAsDictionary() -> [String: Any] {
+        guard let configs = baseMainRequestConfigs else { return [:] }
+        return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(configs))) as? [String: Any] ?? [:]
+    }
+    
 }

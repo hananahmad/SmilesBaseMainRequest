@@ -7,25 +7,25 @@
 
 import Foundation
 
-public class SmilesBaseMainRequestConfigurations : Codable {
+open class SmilesBaseMainRequestConfigurations : Codable {
     
-    var encryptionkey: String?
-    var initVector: String?
-    var additionalInfo: [SmilesBaseMainResponseAdditionalInfo]?
-    var appVersion : String?
-    var authToken : String?
-    var channel : String?
-    var deviceId : String?
-    var handsetModel : String?
-    var imsi : String?
-    var isGpsEnabled : Bool?
-    var isNotificationEnabled : Bool?
-    @objc var lang : String?
-    @objc var msisdn : String?
-    var osVersion : String?
-    var token : String?
-    var hashId : String?
-    var deviceHashId : String?
+    public var encryptionkey: String?
+    public var initVector: String?
+    public var additionalInfo: [SmilesBaseMainResponseAdditionalInfo]?
+    public var appVersion : String?
+    public var authToken : String?
+    public var channel : String?
+    public var deviceId : String?
+    public var handsetModel : String?
+    public var imsi : String?
+    public var isGpsEnabled : Bool?
+    public var isNotificationEnabled : Bool?
+    @objc public var lang : String?
+    @objc public var msisdn : String?
+    public var osVersion : String?
+    public var token : String?
+    public var hashId : String?
+    public var deviceHashId : String?
     
     enum CodingKeys: String, CodingKey {
         case encryptionkey = "encryptionkey"
@@ -110,5 +110,7 @@ public class SmilesBaseMainRequestConfigurations : Codable {
         self.deviceHashId = deviceHashId
         
     }
+    
+    
     
 }
