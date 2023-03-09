@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class BaseMainResponseAdditionalInfo : Codable {
+@objc public class BaseMainResponseAdditionalInfo : NSObject, Codable {
     
     @objc public var name : String?
     @objc public var value : String?
@@ -23,6 +23,6 @@ public class BaseMainResponseAdditionalInfo : Codable {
         value = try values.decodeIfPresent(String.self, forKey: .value)
     }
     
-    public init() {}
+    public override init() {}
 
 }
