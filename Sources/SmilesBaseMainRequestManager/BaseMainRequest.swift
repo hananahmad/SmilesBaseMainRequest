@@ -11,7 +11,7 @@ open class SmilesBaseMainRequest: Codable {
     
     public init() {}
     
-    public func encode(encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         guard let configs = SmilesBaseMainRequestManager.shared.baseMainRequestConfigs else { return }
         try configs.encode(to: encoder)
     }
