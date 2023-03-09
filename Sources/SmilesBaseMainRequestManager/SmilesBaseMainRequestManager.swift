@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class SmilesBaseMainRequestManager {
+public class SmilesBaseMainRequestManager {
     
     public static let shared = SmilesBaseMainRequestManager()
     public var baseMainRequestConfigs: SmilesBaseMainRequestConfigurations?

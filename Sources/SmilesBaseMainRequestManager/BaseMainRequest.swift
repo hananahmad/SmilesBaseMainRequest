@@ -7,11 +7,11 @@
 
 import Foundation
 
-open class BaseMainRequest: Codable {
+open class SmilesBaseMainRequest: Codable {
     
     public init() {}
     
-    open func encodeConfigs(encoder: Encoder) throws {
+    public func encode(encoder: Encoder) throws {
         guard let configs = SmilesBaseMainRequestManager.shared.baseMainRequestConfigs else { return }
         try configs.encode(to: encoder)
     }
