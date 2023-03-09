@@ -23,6 +23,6 @@ public class BaseMainResponseAdditionalInfo : Codable {
         value = try values.decodeIfPresent(String.self, forKey: .value)
     }
     
-    init() {}
+    public init() {}
 
 }
