@@ -112,4 +112,6 @@ open class SmilesBaseMainRequest : BaseMainRequestable, Codable {
         
     }
     
+    public init() {}
+    
 }
