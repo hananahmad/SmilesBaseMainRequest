@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class SmilesBaseMainRequest: Codable {
+open class SmilesBaseMainRequest: Codable {
     
     public init() {}
     
