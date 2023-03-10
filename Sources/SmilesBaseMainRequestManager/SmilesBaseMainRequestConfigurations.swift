@@ -7,7 +7,7 @@
 
 import Foundation
 
-@objc open class SmilesBaseMainRequestConfigurations : NSObject, Codable {
+@objc public class SmilesBaseMainRequestConfigurations : NSObject, Codable {
     
     public var encryptionkey: String?
     public var initVector: String?
