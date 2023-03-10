@@ -9,8 +9,6 @@ import Foundation
 
 open class SmilesBaseMainRequest : BaseMainRequestable, Codable {
     
-    public var encryptionkey: String?
-    public var initVector: String?
     public var additionalInfo: [BaseMainResponseAdditionalInfo]?
     public var appVersion : String?
     public var authToken : String?
@@ -28,8 +26,6 @@ open class SmilesBaseMainRequest : BaseMainRequestable, Codable {
     public var deviceHashId : String?
     
     enum CodingKeys: String, CodingKey {
-        case encryptionkey = "encryptionkey"
-        case initVector = "initVector"
         case additionalInfo = "additionalInfo"
         case appVersion = "appVersion"
         case authToken = "authToken"
@@ -50,8 +46,6 @@ open class SmilesBaseMainRequest : BaseMainRequestable, Codable {
     open func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         updateValue(baseRequest: self)
-        try container.encodeIfPresent(self.encryptionkey, forKey: .encryptionkey)
-        try container.encodeIfPresent(self.initVector, forKey: .initVector)
         try container.encode(self.additionalInfo, forKey: .additionalInfo)
         try container.encodeIfPresent(self.appVersion, forKey: .appVersion)
         try container.encodeIfPresent(self.authToken, forKey: .authToken)
@@ -90,10 +84,8 @@ open class SmilesBaseMainRequest : BaseMainRequestable, Codable {
         
     }
     
-    init(encryptionKey: String, initVector: String, additionalInfo: [BaseMainResponseAdditionalInfo], appVersion: String?, authToken: String?, channel: String?, deviceId: String?, handsetModel: String?, imsi: String?, isGpsEnabled: Bool?, isNotificationEnabled: Bool?, langauge: String?, msisdn: String?, osVersion: String?, token: String?, hashId: String?, deviceHashId: String?) {
+    init(additionalInfo: [BaseMainResponseAdditionalInfo], appVersion: String?, authToken: String?, channel: String?, deviceId: String?, handsetModel: String?, imsi: String?, isGpsEnabled: Bool?, isNotificationEnabled: Bool?, langauge: String?, msisdn: String?, osVersion: String?, token: String?, hashId: String?, deviceHashId: String?) {
         
-        self.encryptionkey = encryptionKey
-        self.initVector = initVector
         self.additionalInfo = additionalInfo
         self.appVersion = appVersion
         self.authToken = authToken

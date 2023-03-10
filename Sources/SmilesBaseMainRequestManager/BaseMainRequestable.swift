@@ -15,8 +15,6 @@ extension BaseMainRequestable {
 
     func updateValue(baseRequest : SmilesBaseMainRequest) {
         guard let configs = SmilesBaseMainRequestManager.shared.baseMainRequestConfigs else { return }
-        baseRequest.encryptionkey = configs.encryptionkey
-        baseRequest.initVector = configs.initVector
         baseRequest.additionalInfo = configs.additionalInfo
         baseRequest.appVersion = configs.appVersion
         baseRequest.authToken = configs.authToken
